@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { Producto } from '../../../models/producto';
 
 @Component({
-  selector: 'app-modal-producto',
+  selector: 'app-producto-modal',
   standalone: true,
-  templateUrl: './modal-producto.component.html',
-  styleUrls: ['./modal-producto.component.css'],
+  templateUrl: './producto-modal.component.html',
+  styleUrls: ['./producto-modal.component.css'],
   imports: [
     CommonModule,
     FormsModule

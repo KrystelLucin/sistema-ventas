@@ -7,10 +7,10 @@ import { Producto } from '../../models/producto';
 import { ModalProductoComponent } from './producto-modal/producto-modal.component';
 
 @Component({
-  selector: 'app-productos',
+  selector: 'app-admin-productos',
   standalone: true,
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css'],
+  templateUrl: './admin-productos.component.html',
+  styleUrls: ['./admin-productos.component.css'],
   imports: [
     CommonModule,
     FormsModule
