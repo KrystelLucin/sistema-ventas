@@ -1,0 +1,21 @@
+<app-header (toggleSidebar)="sidenav.toggle()"></app-header>
+
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #sidenav mode="side" opened class="desktop-sidebar">
+    <app-desktop-sidebar></app-desktop-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <div class="mobile-tabs">
+      <app-mobile-tabs></app-mobile-tabs>
+    </div>
+
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

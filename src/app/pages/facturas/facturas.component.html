@@ -1,0 +1,69 @@
+<div class="facturas-container">
+
+    <!-- Listado de Facturas -->
+    <div *ngIf="!facturaSeleccionada">
+        <h2>Facturas Generadas</h2>
+
+        <table class="tabla-facturas">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let factura of facturas">
+                    <td>{{ factura.numeroFactura }}</td>
+                    <td>{{ factura.cliente.nombre }}</td>
+                    <td>{{ factura.fecha | date: 'dd/MM/yyyy' }}</td>
+                    <td>${{ factura.total.toFixed(2) }}</td>
+                    <td><button (click)="verDetalle(factura)">Ver Detalle</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Detalle de Factura -->
+    <div *ngIf="facturaSeleccionada" class="detalle-factura">
+
+        <button (click)="cerrarDetalle()">← Volver</button>
+
+        <h2>Factura: {{ facturaSeleccionada.numeroFactura }}</h2>
+        <p><strong>Cliente:</strong> {{ facturaSeleccionada.cliente.nombre }}</p>
+        <p><strong>Fecha:</strong> {{ facturaSeleccionada.fecha | date: 'dd/MM/yyyy' }}</p>
+
+        <h3>Detalles:</h3>
+
+        <table class="tabla-detalles">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>IVA</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detalle of facturaSeleccionada.detalles">
+                    <td>{{ detalle.producto.descripcion }}</td>
+                    <td>{{ detalle.cantidad }}</td>
+                    <td>${{ detalle.precio.toFixed(2) }}</td>
+                    <td>${{ detalle.iva.toFixed(2) }}</td>
+                    <td>${{ detalle.subtotal.toFixed(2) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="totales-factura">
+            <p><strong>Subtotal:</strong> ${{ facturaSeleccionada.subtotal.toFixed(2) }}</p>
+            <p><strong>IVA:</strong> ${{ facturaSeleccionada.totalIVA.toFixed(2) }}</p>
+            <p><strong>Total:</strong> ${{ facturaSeleccionada.total.toFixed(2) }}</p>
+        </div>
+
+    </div>
+
+</div>

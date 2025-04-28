@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+
+  <button mat-icon-button (click)="toggleMenu()" class="hamburger-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="title-container">
+    <span class="title">Sistema de Ventas</span>
+  </div>
+
+  <div class="user-role">
+    <span class="user-name">{{ usuario }}</span>
+  </div>
+
+  <button mat-raised-button color="accent" (click)="logout()">
+    Cerrar sesión
+  </button>
+
+</mat-toolbar>

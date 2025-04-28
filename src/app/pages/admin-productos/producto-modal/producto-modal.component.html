@@ -1,0 +1,20 @@
+<h2>{{ data ? 'Editar Producto' : 'Nuevo Producto' }}</h2>
+
+<form (ngSubmit)="guardar()">
+  <label>Código:</label>
+  <input type="text" [(ngModel)]="producto.codigo" name="codigo" required>
+
+  <label>Descripción:</label>
+  <input type="text" [(ngModel)]="producto.descripcion" name="descripcion" required>
+
+  <label>Categoría:</label>
+  <input type="text" [(ngModel)]="producto.categoria" name="categoria" required>
+
+  <label>Precio:</label>
+  <input type="number" [(ngModel)]="producto.precio" name="precio" required step="0.01">
+
+  <div class="acciones">
+    <button type="submit">Guardar</button>
+    <button type="button" (click)="cancelar()">Cancelar</button>
+  </div>
+</form>

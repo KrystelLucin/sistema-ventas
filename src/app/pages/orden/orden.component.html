@@ -1,0 +1,77 @@
+<div class="orden-container">
+
+    <!-- Área de Cliente + Productos -->
+    <div class="contenido-principal">
+
+        <!-- Búsqueda de Cliente -->
+        <div class="cliente-seleccion">
+            <h2>Seleccionar Cliente</h2>
+            <input type="text" [(ngModel)]="filtroCliente" (input)="filtrarClientes()"
+                placeholder="Buscar por cédula o nombre">
+            <div class="clientes-grid">
+                <div *ngFor="let cliente of clientesFiltrados" class="cliente-card"
+                    (click)="seleccionarCliente(cliente)">
+                    <h3>{{ cliente.nombre }}</h3>
+                    <p>Cédula: {{ cliente.identificacion }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Búsqueda de Producto -->
+        <div class="productos">
+            <h2>Productos Disponibles</h2>
+            <input type="text" [(ngModel)]="filtroProducto" (input)="filtrarProductos()"
+                placeholder="Buscar por código o descripción">
+            <div class="productos-grid">
+                <div *ngFor="let producto of productosFiltrados" class="producto-card">
+                    <h3>{{ producto.descripcion }}</h3>
+                    <p>Categoría: {{ producto.categoria }}</p>
+                    <p>Precio: ${{ producto.precio }}</p>
+                    <button (click)="agregarProducto(producto)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Área del Carrito -->
+    <div class="carrito">
+        <h2>Carrito de Orden</h2>
+
+        <div *ngIf="clienteSeleccionado" class="cliente-carrito">
+            <p><strong>Cliente:</strong> {{ clienteSeleccionado.nombre }}</p>
+        </div>
+
+        <div *ngFor="let detalle of carrito" class="detalle-item">
+            <div class="detalle-header">
+                <p><strong>{{ detalle.producto.descripcion }}</strong></p>
+                <button class="eliminar-btn" (click)="eliminarProducto(detalle)">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+
+            <div class="cantidad-control">
+                <button mat-icon-button color="primary" (click)="cambiarCantidad(detalle, detalle.cantidad - 1)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+
+                <span>{{ detalle.cantidad }}</span>
+
+                <button mat-icon-button color="primary" (click)="cambiarCantidad(detalle, detalle.cantidad + 1)">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+
+            <p>Subtotal: ${{ detalle.subtotal.toFixed(2) }}</p>
+        </div>
+
+        <div class="totales">
+            <p><strong>Subtotal:</strong> ${{ subtotal.toFixed(2) }}</p>
+            <p><strong>IVA:</strong> ${{ totalIVA.toFixed(2) }}</p>
+            <p><strong>Total:</strong> ${{ total.toFixed(2) }}</p>
+        </div>
+
+        <button (click)="confirmarOrden()">Confirmar Orden</button>
+    </div>
+
+</div>

@@ -1,0 +1,8 @@
+<nav mat-tab-nav-bar>
+
+    <a mat-tab-link *ngFor="let item of menu" [routerLink]="item.path" routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive">
+        {{ item.label }}
+    </a>
+
+</nav>

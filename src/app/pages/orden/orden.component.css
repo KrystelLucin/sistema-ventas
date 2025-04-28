@@ -1,0 +1,158 @@
+.orden-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    padding: 24px;
+}
+
+.contenido-principal {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.carrito {
+    flex: 0 0 320px;
+    max-width: 320px;
+}
+
+.cliente-seleccion {
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.clientes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.cliente-card {
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+}
+
+.cliente-card:hover {
+    background: #e3f2fd;
+}
+
+.productos {
+    padding: 16px;
+    border-radius: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.productos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.producto-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    width: 180px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.detalle-item {
+    background-color: #f8f8f8;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.detalle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cantidad-control {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+}
+
+.cantidad-control button {
+    min-width: 28px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+}
+
+.cantidad-control mat-icon {
+    font-size: 18px;
+}
+
+.eliminar-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eliminar-btn mat-icon {
+    font-size: 20px;
+    color: red;
+}
+
+.eliminar-btn:hover mat-icon {
+    color: darkred;
+    background-color: #cfcfcf;
+}
+
+
+button {
+    background-color: #1976d2;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
+
+.totales {
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+    .orden-container {
+        flex-direction: column-reverse;
+        /* 👈 Cambia a vertical y pone carrito arriba */
+        gap: 16px;
+    }
+
+    .contenido-principal {
+        width: 100%;
+    }
+
+    .carrito {
+        width: 100%;
+        max-width: 100%;
+    }
+}

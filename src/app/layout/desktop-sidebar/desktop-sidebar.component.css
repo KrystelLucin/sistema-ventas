@@ -1,0 +1,12 @@
+mat-nav-list {
+    height: 100%;
+    padding-top: 16px;
+}
+
+a.mat-list-item {
+    font-weight: bold;
+}
+
+.active-link {
+    background-color: rgba(0, 0, 0, 0.1);
+}

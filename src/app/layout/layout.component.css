@@ -1,0 +1,36 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.desktop-sidebar {
+  display: block;
+}
+
+.mobile-tabs {
+  display: none;
+}
+
+.content-container {
+  padding: 24px;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 64px - 48px);
+  /* 64px Header + 48px Tabs (si en móvil) */
+  overflow-y: auto;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .desktop-sidebar {
+    display: none;
+  }
+
+  .mobile-tabs {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .content-container {
+    min-height: calc(100vh - 64px - 48px);
+    /* Header + Tabs */
+  }
+}

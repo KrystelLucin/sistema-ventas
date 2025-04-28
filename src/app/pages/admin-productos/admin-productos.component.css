@@ -1,0 +1,54 @@
+.productos-container {
+    padding: 24px;
+}
+
+.header-productos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.header-productos button {
+    background-color: #1976d2;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.header-productos button:hover {
+    background-color: #1565c0;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabla-productos th {
+    background-color: #1976d2;
+    color: white;
+}
+
+button {
+    margin: 0 4px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
